@@ -1,0 +1,6 @@
+.ipynb_checkpoints
+*.py
+*.html
+
+_build/
+venv/

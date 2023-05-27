@@ -492,6 +492,14 @@ document.write(`
 <p>Some Python modules are part of the <a class="reference external" href="https://docs.python.org/3/library/index.html">standard library</a>, but are not imported with builtins. We’ll use the <code class="docutils literal notranslate"><span class="pre">pathlib</span></code> module which is useful for accessing files and folders.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># if running on google colab, uncomment the next line and execute this cell to install the dependencies and prevent &quot;ModuleNotFoundError&quot; in later cells:</span>
+<span class="c1"># !pip install -r https://raw.githubusercontent.com/PVSC-Python-Tutorials/PVSC50/main/requirements.txt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>  <span class="c1"># for getting environment variables</span>
 <span class="kn">import</span> <span class="nn">pathlib</span>  <span class="c1"># for finding the example dataset</span>
 <span class="kn">import</span> <span class="nn">pvlib</span>
@@ -1590,7 +1598,7 @@ Freq: M, Name: GHI, dtype: int64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">df_abq</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1990</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df_abq</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_abq</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Hour&#39;</span><span class="p">]])</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ghi_comparison</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>

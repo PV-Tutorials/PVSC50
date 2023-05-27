@@ -23,7 +23,7 @@ data, months, inputs, meta = pvlib.iotools.get_pvgis_tmy(lat=LATITUDE, lon=LONGI
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[6], line 3[0m
+Cell [0;32mIn[7], line 3[0m
 [1;32m      1[0m [38;5;66;03m# now we can get some weather, before we used TMY,[39;00m
 [1;32m      2[0m [38;5;66;03m# now we'll get some data from PVGIS[39;00m
 [0;32m----> 3[0m data, months, inputs, meta [38;5;241m=[39m [43mpvlib[49m[38;5;241;43m.[39;49m[43miotools[49m[38;5;241;43m.[39;49m[43mget_pvgis_tmy[49m[43m([49m[43mlat[49m[38;5;241;43m=[39;49m[43mLATITUDE[49m[43m,[49m[43m [49m[43mlon[49m[38;5;241;43m=[39;49m[43mLONGITUDE[49m[43m)[49m

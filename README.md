@@ -27,12 +27,19 @@ use [Google Colaboratory](https://colab.research.google.com/).
 ### Google Colaboratory
 To run these tutorials in [Google Colaboratory](https://colab.research.google.com/)
 you can click the button below:
+
 <a target="_blank" href="https://colab.research.google.com/github/PVSC-Python-Tutorials/PVSC50/blob/main/Tutorial%200%20-%20Overview.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
 You can also select Colaboratory from the launch icon at the top of each tutorial
 in the [Jupyter book](https://pvsc-python-tutorials.github.io/PVSC50/index.html).
+
+#### Installing Requirements
+When using Google Colaboratory, you must uncomment the first cell that installs
+the tutorial requirements.
+
+    !pip install -r https://raw.githubusercontent.com/PVSC-Python-Tutorials/PVSC50/main/requirements.txt
 
 ### Jupyter Books
 

@@ -543,7 +543,7 @@ document.write(`
 </section>
 <section id="reading-a-tmy-dataset-with-pvlib">
 <h2>Reading a TMY dataset with pvlib<a class="headerlink" href="#reading-a-tmy-dataset-with-pvlib" title="Permalink to this heading">#</a></h2>
-<p>First, we’ll read the TMY dataset with <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.read_tmy3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_tmy3()</span></code></a> which returns a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">Pandas DataFrame</a> of the timeseries weather data and a second output with a Python dictionary of the TMY metadata like longitude, latitude, elevation, etc.</p>
+<p>First, we’ll read the TMY dataset with <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.read_tmy3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_tmy3()</span></code></a> which returns a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html">Pandas DataFrame</a> of the timeseries weather data and a second output with a Python dictionary of the TMY metadata like longitude, latitude, elevation, etc.</p>
 <p>We will use the Python <a class="reference external" href="https://docs.python.org/3/library/pathlib.html"><code class="docutils literal notranslate"><span class="pre">pathlib</span></code></a> to get the path to the <code class="docutils literal notranslate"><span class="pre">'data'</span></code> directory which comes with the <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> package. Then we can use the slash operator, <code class="docutils literal notranslate"><span class="pre">/</span></code> to make the full path to the TMY file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1302,10 +1302,9 @@ Freq: M, Name: GHI, dtype: int64
 <h2>Where to get <em>Free</em> Solar Irradiance Data?<a class="headerlink" href="#where-to-get-free-solar-irradiance-data" title="Permalink to this heading">#</a></h2>
 <p>There are many different sources of solar irradiance data. For your projects, these are some of the most common:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://nsrdb.nrel.gov/data-sets/archives.html">TMY3/TMY2</a> - like the data we loaded earlier on this example. This database of TMY3 <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files and TMY2 files have been archived by NREL.</p></li>
 <li><p><a class="reference external" href="https://maps.nrel.gov/nsrdb-viewer/">NSRDB</a> - National Solar Radiation Database. You can access data through the website for many locations accross the world, or you can use their <a class="reference external" href="https://developer.nrel.gov/docs/solar/nsrdb/">web API</a> to download data programmatically. An “API” is an <a class="reference external" href="https://en.wikipedia.org/wiki/API">“application programming interface”</a>, and a “web API” is a programming interface that allows you to write code to interact with web services like the NSRDB.</p></li>
-<li><p><a class="reference external" href="https://www.energy.gov/eere/buildings/downloads/energyplus-0">EPW</a> - Energy Plus Weather data is available for many locations accross the world. It’s in its own format file (‘EPW’) so you can’t open it easily in a spreadsheet program like Excel, but you can use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.read_epw.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_epw()</span></code></a> to get it into a dataframe and use it.</p></li>
-<li><p><a class="reference external" href="https://ec.europa.eu/jrc/en/pvgis">PVGIS</a> - Free global weather data provided by the European Union and derived from many govermental agencies including the NSRDB. PVGIS also provides a web API. You can get PVGIS TMY data using <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.get_pvgis_tmy.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_pvgis_tmy()</span></code></a>.</p></li>
+<li><p><a class="reference external" href="https://www.energy.gov/eere/buildings/downloads/energyplus-0">EPW</a> - Energy Plus Weather data is available for many locations accross the world. It’s in its own format file (‘EPW’) so you can’t open it easily in a spreadsheet program like Excel, but you can use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.read_epw.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_epw()</span></code></a> to get it into a dataframe and use it.</p></li>
+<li><p><a class="reference external" href="https://re.jrc.ec.europa.eu/pvg_tools/en/">PVGIS</a> - Free global weather data provided by the European Union and derived from many govermental agencies including the NSRDB. PVGIS also provides a web API. You can get PVGIS TMY data using <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.get_pvgis_tmy.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_pvgis_tmy()</span></code></a>.</p></li>
 <li><p>Perhaps another useful link: <a class="reference external" href="https://sam.nrel.gov/weather-data.html">https://sam.nrel.gov/weather-data.html</a></p></li>
 </ul>
 </section>
@@ -1317,13 +1316,13 @@ Freq: M, Name: GHI, dtype: int64
 <li><p><a class="reference external" href="https://solargis.com/">SolarGIS</a></p></li>
 <li><p><a class="reference external" href="https://www.vaisala.com/en">Vaisala</a></p></li>
 <li><p><a class="reference external" href="https://meteonorm.com/en/">Meteonorm</a></p></li>
-<li><p><a class="reference external" href="https://src.dnvgl.com/">DNV Solar Resource Compass</a></p></li>
+<li><p><a class="reference external" href="https://src.dnv.com/">DNV Solar Resource Compass</a></p></li>
 </ul>
 <p><img alt="NSRDB Example" src="_images/tutorial_1_NSRDB_example.PNG" /></p>
 </section>
 <section id="nrel-api-key">
 <h2>NREL API Key<a class="headerlink" href="#nrel-api-key" title="Permalink to this heading">#</a></h2>
-<p>At the <a class="reference external" href="https://developer.nrel.gov/">NREL Developer Network</a>, there are <a class="reference external" href="https://en.wikipedia.org/wiki/API">APIs</a> to a lot of valuable <a class="reference external" href="https://developer.nrel.gov/docs/solar/">solar resources</a> like <a class="reference external" href="https://developer.nrel.gov/docs/solar/nsrdb/">weather data from the NSRDB</a>, <a class="reference external" href="https://developer.nrel.gov/docs/solar/pvdaq-v3/">operational data from PVDAQ</a>, or indicative calculations using <a class="reference external" href="https://developer.nrel.gov/docs/solar/pvwatts/">PVWatts</a>. In order to use these resources from NREL, you need to <a class="reference external" href="https://developer.nrel.gov/signup/">register for a free API key</a>. You can test out the APIs using the <code class="docutils literal notranslate"><span class="pre">DEMO_KEY</span></code> but it has limited bandwidth compared to the <a class="reference external" href="https://developer.nrel.gov/docs/rate-limits/">usage limit for registered users</a>. NREL has some <a class="reference external" href="https://developer.nrel.gov/docs/api-key/">API usage instructions</a>, but pvlib has a few builtin functions, like <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.get_psm3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code></a>, that wrap the NREL API, and call them for you to make it much easier to use. Skip ahead to the next section to learn more. But before you do…</p>
+<p>At the <a class="reference external" href="https://developer.nrel.gov/">NREL Developer Network</a>, there are <a class="reference external" href="https://en.wikipedia.org/wiki/API">APIs</a> to a lot of valuable <a class="reference external" href="https://developer.nrel.gov/docs/solar/">solar resources</a> like <a class="reference external" href="https://developer.nrel.gov/docs/solar/nsrdb/">weather data from the NSRDB</a>, <a class="reference external" href="https://developer.nrel.gov/docs/solar/pvdaq-v3/">operational data from PVDAQ</a>, or indicative calculations using <a class="reference external" href="https://developer.nrel.gov/docs/solar/pvwatts/">PVWatts</a>. In order to use these resources from NREL, you need to <a class="reference external" href="https://developer.nrel.gov/signup/">register for a free API key</a>. You can test out the APIs using the <code class="docutils literal notranslate"><span class="pre">DEMO_KEY</span></code> but it has limited bandwidth compared to the <a class="reference external" href="https://developer.nrel.gov/docs/rate-limits/">usage limit for registered users</a>. NREL has some <a class="reference external" href="https://developer.nrel.gov/docs/api-key/">API usage instructions</a>, but pvlib has a few builtin functions, like <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.get_psm3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code></a>, that wrap the NREL API, and call them for you to make it much easier to use. Skip ahead to the next section to learn more. But before you do…</p>
 <p><strong>Please pause now to visit <a class="reference external" href="https://developer.nrel.gov/signup/">https://developer.nrel.gov/signup/</a> and get an API key.</strong></p>
 <section id="application-programming-interface-api">
 <h3>Application Programming Interface (API)<a class="headerlink" href="#application-programming-interface-api" title="Permalink to this heading">#</a></h3>
@@ -1353,11 +1352,11 @@ Freq: M, Name: GHI, dtype: int64
 </section>
 <section id="fetching-tmys-from-the-nsrdb">
 <h2>Fetching TMYs from the NSRDB<a class="headerlink" href="#fetching-tmys-from-the-nsrdb" title="Permalink to this heading">#</a></h2>
-<p>The example TMY dataset used here is from an airport in North Carolina, but what if we wanted to model a PV system somewhere else? The NSRDB, one of many sources of weather data intended for PV modeling, is free and easy to access using pvlib. As an example, we’ll fetch a TMY dataset for Albuquerque, New Mexico at coordinates <a class="reference external" href="https://www.google.com/maps/&#64;35.0844,-106.6504,9z">(35.0844, -106.6504)</a>. We use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.get_psm3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code></a> which returns a Python dictionary of metadata and a Pandas dataframe of the timeseries weather data.</p>
+<p>The example TMY dataset used here is from an airport in North Carolina, but what if we wanted to model a PV system somewhere else? The NSRDB, one of many sources of weather data intended for PV modeling, is free and easy to access using pvlib. As an example, we’ll fetch a TMY dataset for San Juan, Puerto Rico at coordinates <a class="reference external" href="https://goo.gl/maps/ZuYuKFxSpJ1z9HXX8">(18.4671, -66.1185)</a>. We use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.get_psm3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code></a> which returns a Python dictionary of metadata and a Pandas dataframe of the timeseries weather data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_abq</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_psm3</span><span class="p">(</span>
-    <span class="n">latitude</span><span class="o">=</span><span class="mf">35.0844</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">106.6504</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_PR</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_psm3</span><span class="p">(</span>
+    <span class="n">latitude</span><span class="o">=</span><span class="mf">18.4671</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">66.1185</span><span class="p">,</span>
     <span class="n">api_key</span><span class="o">=</span><span class="n">NREL_API_KEY</span><span class="p">,</span>
     <span class="n">email</span><span class="o">=</span><span class="s1">&#39;mark.mikofski@dnv.com&#39;</span><span class="p">,</span>  <span class="c1"># &lt;-- any email works here fine</span>
     <span class="n">names</span><span class="o">=</span><span class="s1">&#39;tmy&#39;</span><span class="p">)</span>
@@ -1371,15 +1370,15 @@ Freq: M, Name: GHI, dtype: int64
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Source&#39;: &#39;NSRDB&#39;,
- &#39;Location ID&#39;: &#39;94139&#39;,
+ &#39;Location ID&#39;: &#39;1493571&#39;,
  &#39;City&#39;: &#39;-&#39;,
  &#39;State&#39;: &#39;-&#39;,
  &#39;Country&#39;: &#39;-&#39;,
- &#39;Latitude&#39;: 35.09,
- &#39;Longitude&#39;: -106.66,
- &#39;Time Zone&#39;: -7,
- &#39;Elevation&#39;: 1496,
- &#39;Local Time Zone&#39;: -7,
+ &#39;Latitude&#39;: 18.45,
+ &#39;Longitude&#39;: -66.1,
+ &#39;Time Zone&#39;: -4,
+ &#39;Elevation&#39;: 6,
+ &#39;Local Time Zone&#39;: -4,
  &#39;Dew Point Units&#39;: &#39;c&#39;,
  &#39;DHI Units&#39;: &#39;w/m2&#39;,
  &#39;DNI Units&#39;: &#39;w/m2&#39;,
@@ -1394,15 +1393,15 @@ Freq: M, Name: GHI, dtype: int64
 </div>
 </div>
 </div>
-<p>TMY datasets from the PSM3 service of the NSRDB are timestamped using the real year that the measurements came from. The <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.read_tmy3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_tmy3()</span></code></a> function had a <code class="docutils literal notranslate"><span class="pre">coerce_year</span></code> argument to force everything to align to a single dummy year, but <code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code> doesn’t have that feature. For convenience let’s standardize the data to 1990 and then compare monthly GHI to the North Carolina location:</p>
+<p>TMY datasets from the PSM3 service of the NSRDB are timestamped using the real year that the measurements came from. The <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.read_tmy3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_tmy3()</span></code></a> function had a <code class="docutils literal notranslate"><span class="pre">coerce_year</span></code> argument to force everything to align to a single dummy year, but <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.iotools.get_psm3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code></a> doesn’t have that feature. For convenience let’s standardize the data to 1990 and then compare monthly GHI to the North Carolina location:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_abq</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1990</span>
-<span class="n">df_abq</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_abq</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Hour&#39;</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_PR</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1990</span>
+<span class="n">df_PR</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_PR</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Hour&#39;</span><span class="p">]])</span>
 
 <span class="n">ghi_comparison</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s1">&#39;NC&#39;</span><span class="p">:</span> <span class="n">monthly_ghi</span><span class="p">,</span>  <span class="c1"># using the monthly values from earlier</span>
-    <span class="s1">&#39;NM&#39;</span><span class="p">:</span> <span class="n">df_abq</span><span class="p">[</span><span class="s1">&#39;GHI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
+    <span class="s1">&#39;PR&#39;</span><span class="p">:</span> <span class="n">df_PR</span><span class="p">[</span><span class="s1">&#39;GHI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
 <span class="p">})</span>
 
 <span class="n">ghi_comparison</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
@@ -1411,10 +1410,10 @@ Freq: M, Name: GHI, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8448e0d086eeec51c4ec378245c05635ecbbe4e484bbd9b24f2e9b737b41710b.png" src="_images/8448e0d086eeec51c4ec378245c05635ecbbe4e484bbd9b24f2e9b737b41710b.png" />
+<img alt="_images/f7fbc6918d679a7ef5ba5dca2e81a6dd1a40f79d3749351c2a8f9c677c1f6242.png" src="_images/f7fbc6918d679a7ef5ba5dca2e81a6dd1a40f79d3749351c2a8f9c677c1f6242.png" />
 </div>
 </div>
-<p>It’s not too surprising to see that our New Mexico location is significantly sunnier than the one in North Carolina.</p>
+<p>It’s not too surprising to see that Puerto Rico location is significantly sunnier than the one in North Carolina.</p>
 <p><a class="reference external" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
 <p>This work is licensed under a <a class="reference external" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
 </section>

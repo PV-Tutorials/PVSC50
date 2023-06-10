@@ -951,14 +951,14 @@ Number of columns: 71
 <section id="wind">
 <h2>Wind<a class="headerlink" href="#wind" title="Permalink to this heading">#</a></h2>
 <p>Wind speed is measured with an anemometer.  The most common type is a the cup-type anemometer, shown on the right side of the picture below.  The number of rotations per time interval is used to calculate the wind speed.  The vane on the left is used to measure the direction of the wind.  Wind direction is reported as the direction from which the wind is blowing.</p>
-<p><img src="https://pvpmc.sandia.gov/wp-content/uploads/2012/04/anemometer.jpg"></img></p>
+<p><img src="https://pvpmc.sandia.gov/app/uploads/sites/243/2022/11/anemometer.jpg"></img></p>
 </section>
 <section id="air-temperature">
 <h2>Air temperature<a class="headerlink" href="#air-temperature" title="Permalink to this heading">#</a></h2>
 <p>Also known as dry-bulb temperature, is the temperature of the ambient air when the measurement device is shielded from radiation and moisture. The most common method of air temperature measurement uses a resistive temperature device (RTD) or thermocouple within a radiation shield. The shield blocks sunlight from reaching the sensor (avoiding radiative heating), yet allows natural air flow around the sensor. More accurate temperature measurement devices utilize a shield which forces air across the sensor.</p>
 <p>Air temperature is typically measured on the Celsius scale.</p>
 <p>Air temperature plays a large role in PV system performance as PV modules and inverters are cooled convectively by the surrounding air.</p>
-<p><img src="https://pvpmc.sandia.gov/wp-content/uploads/2012/04/AmbTemp.jpg" width="400" height="400"> </img></p>
+<p><img src="https://www.sandia.gov/app/uploads/sites/243/2022/11/AmbTemp-768x1024-1.jpg" width="400" height="400"> </img></p>
 </section>
 <section id="downselect-columns">
 <h2>Downselect columns<a class="headerlink" href="#downselect-columns" title="Permalink to this heading">#</a></h2>
@@ -1356,7 +1356,7 @@ Freq: M, Name: GHI, dtype: int64
 <p>The example TMY dataset used here is from an airport in North Carolina, but what if we wanted to model a PV system somewhere else? The NSRDB, one of many sources of weather data intended for PV modeling, is free and easy to access using pvlib. As an example, we’ll fetch a TMY dataset for Albuquerque, New Mexico at coordinates <a class="reference external" href="https://www.google.com/maps/&#64;35.0844,-106.6504,9z">(35.0844, -106.6504)</a>. We use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.get_psm3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code></a> which returns a Python dictionary of metadata and a Pandas dataframe of the timeseries weather data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span><span class="p">,</span> <span class="n">df_abq</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_psm3</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_abq</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_psm3</span><span class="p">(</span>
     <span class="n">latitude</span><span class="o">=</span><span class="mf">35.0844</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">106.6504</span><span class="p">,</span>
     <span class="n">api_key</span><span class="o">=</span><span class="n">NREL_API_KEY</span><span class="p">,</span>
     <span class="n">email</span><span class="o">=</span><span class="s1">&#39;mark.mikofski@dnv.com&#39;</span><span class="p">,</span>  <span class="c1"># &lt;-- any email works here fine</span>
@@ -1370,232 +1370,29 @@ Freq: M, Name: GHI, dtype: int64
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Year</th>
-      <th>Month</th>
-      <th>Day</th>
-      <th>Hour</th>
-      <th>Minute</th>
-      <th>Temperature</th>
-      <th>Dew Point</th>
-      <th>DHI</th>
-      <th>DNI</th>
-      <th>GHI</th>
-      <th>Surface Albedo</th>
-      <th>Pressure</th>
-      <th>Wind Direction</th>
-      <th>Wind Speed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2020-01-01 00:30:00-07:00</th>
-      <td>2020</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>30</td>
-      <td>-2.6</td>
-      <td>-8.8</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>845.0</td>
-      <td>324.0</td>
-      <td>1.6</td>
-    </tr>
-    <tr>
-      <th>2020-01-01 01:30:00-07:00</th>
-      <td>2020</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>30</td>
-      <td>-3.0</td>
-      <td>-9.1</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>845.0</td>
-      <td>327.0</td>
-      <td>1.5</td>
-    </tr>
-    <tr>
-      <th>2020-01-01 02:30:00-07:00</th>
-      <td>2020</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>30</td>
-      <td>-3.4</td>
-      <td>-9.4</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>844.0</td>
-      <td>333.0</td>
-      <td>1.4</td>
-    </tr>
-    <tr>
-      <th>2020-01-01 03:30:00-07:00</th>
-      <td>2020</td>
-      <td>1</td>
-      <td>1</td>
-      <td>3</td>
-      <td>30</td>
-      <td>-3.8</td>
-      <td>-9.7</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>844.0</td>
-      <td>336.0</td>
-      <td>1.4</td>
-    </tr>
-    <tr>
-      <th>2020-01-01 04:30:00-07:00</th>
-      <td>2020</td>
-      <td>1</td>
-      <td>1</td>
-      <td>4</td>
-      <td>30</td>
-      <td>-4.1</td>
-      <td>-9.8</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>844.0</td>
-      <td>334.0</td>
-      <td>1.3</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2012-12-31 19:30:00-07:00</th>
-      <td>2012</td>
-      <td>12</td>
-      <td>31</td>
-      <td>19</td>
-      <td>30</td>
-      <td>-0.7</td>
-      <td>-7.9</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>846.0</td>
-      <td>329.0</td>
-      <td>1.4</td>
-    </tr>
-    <tr>
-      <th>2012-12-31 20:30:00-07:00</th>
-      <td>2012</td>
-      <td>12</td>
-      <td>31</td>
-      <td>20</td>
-      <td>30</td>
-      <td>-1.3</td>
-      <td>-8.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>846.0</td>
-      <td>333.0</td>
-      <td>1.4</td>
-    </tr>
-    <tr>
-      <th>2012-12-31 21:30:00-07:00</th>
-      <td>2012</td>
-      <td>12</td>
-      <td>31</td>
-      <td>21</td>
-      <td>30</td>
-      <td>-1.7</td>
-      <td>-8.2</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>846.0</td>
-      <td>330.0</td>
-      <td>1.4</td>
-    </tr>
-    <tr>
-      <th>2012-12-31 22:30:00-07:00</th>
-      <td>2012</td>
-      <td>12</td>
-      <td>31</td>
-      <td>22</td>
-      <td>30</td>
-      <td>-1.9</td>
-      <td>-8.4</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>846.0</td>
-      <td>326.0</td>
-      <td>1.5</td>
-    </tr>
-    <tr>
-      <th>2012-12-31 23:30:00-07:00</th>
-      <td>2012</td>
-      <td>12</td>
-      <td>31</td>
-      <td>23</td>
-      <td>30</td>
-      <td>-2.2</td>
-      <td>-8.6</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.17</td>
-      <td>846.0</td>
-      <td>324.0</td>
-      <td>1.5</td>
-    </tr>
-  </tbody>
-</table>
-<p>8760 rows × 14 columns</p>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Source&#39;: &#39;NSRDB&#39;,
+ &#39;Location ID&#39;: &#39;94139&#39;,
+ &#39;City&#39;: &#39;-&#39;,
+ &#39;State&#39;: &#39;-&#39;,
+ &#39;Country&#39;: &#39;-&#39;,
+ &#39;Latitude&#39;: 35.09,
+ &#39;Longitude&#39;: -106.66,
+ &#39;Time Zone&#39;: -7,
+ &#39;Elevation&#39;: 1496,
+ &#39;Local Time Zone&#39;: -7,
+ &#39;Dew Point Units&#39;: &#39;c&#39;,
+ &#39;DHI Units&#39;: &#39;w/m2&#39;,
+ &#39;DNI Units&#39;: &#39;w/m2&#39;,
+ &#39;GHI Units&#39;: &#39;w/m2&#39;,
+ &#39;Temperature Units&#39;: &#39;c&#39;,
+ &#39;Pressure Units&#39;: &#39;mbar&#39;,
+ &#39;Wind Direction Units&#39;: &#39;Degrees&#39;,
+ &#39;Wind Speed Units&#39;: &#39;m/s&#39;,
+ &#39;Surface Albedo Units&#39;: &#39;N/A&#39;,
+ &#39;Version&#39;: &#39;3.2.0&#39;}
+</pre></div>
+</div>
+</div>
 </div>
 <p>TMY datasets from the PSM3 service of the NSRDB are timestamped using the real year that the measurements came from. The <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.iotools.read_tmy3.html"><code class="docutils literal notranslate"><span class="pre">pvlib.iotools.read_tmy3()</span></code></a> function had a <code class="docutils literal notranslate"><span class="pre">coerce_year</span></code> argument to force everything to align to a single dummy year, but <code class="docutils literal notranslate"><span class="pre">pvlib.iotools.get_psm3()</span></code> doesn’t have that feature. For convenience let’s standardize the data to 1990 and then compare monthly GHI to the North Carolina location:</p>
 <div class="cell docutils container">
@@ -1614,20 +1411,7 @@ Freq: M, Name: GHI, dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">df_abq</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1990</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df_abq</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_abq</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Hour&#39;</span><span class="p">]])</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ghi_comparison</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s1">&#39;NC&#39;</span><span class="p">:</span> <span class="n">monthly_ghi</span><span class="p">,</span>  <span class="c1"># using the monthly values from earlier</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="s1">&#39;NM&#39;</span><span class="p">:</span> <span class="n">df_abq</span><span class="p">[</span><span class="s1">&#39;GHI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="p">})</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">ghi_comparison</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
-
-<span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
-</pre></div>
-</div>
+<img alt="_images/8448e0d086eeec51c4ec378245c05635ecbbe4e484bbd9b24f2e9b737b41710b.png" src="_images/8448e0d086eeec51c4ec378245c05635ecbbe4e484bbd9b24f2e9b737b41710b.png" />
 </div>
 </div>
 <p>It’s not too surprising to see that our New Mexico location is significantly sunnier than the one in North Carolina.</p>

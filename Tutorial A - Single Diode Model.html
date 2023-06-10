@@ -518,19 +518,13 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now we can get some weather, before we used TMY,</span>
 <span class="c1"># now we&#39;ll get some data from PVGIS</span>
-<span class="n">data</span><span class="p">,</span> <span class="n">months</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_pvgis_tmy</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">LATITUDE</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="n">LONGITUDE</span><span class="p">)</span>
+<span class="n">data</span><span class="p">,</span> <span class="n">months</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_pvgis_tmy</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="n">LATITUDE</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="n">LONGITUDE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># now we can get some weather, before we used TMY,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># now we&#39;ll get some data from PVGIS</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">data</span><span class="p">,</span> <span class="n">months</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">iotools</span><span class="o">.</span><span class="n">get_pvgis_tmy</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">LATITUDE</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="n">LONGITUDE</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: get_pvgis_tmy() got an unexpected keyword argument &#39;lat&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.16/x64/lib/python3.9/site-packages/pvlib/iotools/pvgis.py:494: pvlibDeprecationWarning: PVGIS variable names will be renamed to pvlib conventions by default starting in pvlib 0.10.0. Specify map_variables=True to enable that behavior now, or specify map_variables=False to hide this warning.
+  warnings.warn(
 </pre></div>
 </div>
 </div>
@@ -606,12 +600,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\KANDERSO\Software\Anaconda3\lib\site-packages\scipy\optimize\zeros.py:401: RuntimeWarning: invalid value encountered in greater_equal
-  failures[nz_der] = np.abs(dp) &gt;= tol  # items not yet converged
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -622,7 +610,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/91cc8d2a5412bdd506a0e9df92e79f001cb14e955872124319f4bfecc1a003d6.png" src="_images/91cc8d2a5412bdd506a0e9df92e79f001cb14e955872124319f4bfecc1a003d6.png" />
+<img alt="_images/8046cd1cf6cea1e1a01a29854ba2493d3e889d3bf90069bb86d864aa9ae1c7de.png" src="_images/8046cd1cf6cea1e1a01a29854ba2493d3e889d3bf90069bb86d864aa9ae1c7de.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -661,7 +649,7 @@ document.write(`
 </section>
 <section id="ac-output">
 <h2>AC Output<a class="headerlink" href="#ac-output" title="Permalink to this heading">#</a></h2>
-<p>The <a class="reference external" href="https://energy.sandia.gov/wp-content/gallery/uploads/Performance-Model-for-Grid-Connected-Photovoltaic-Inverters.pdf">Sandia grid inverter</a> is a convenient model. The coefficients in the NREL SAM library are derived from California Energy Commision (CEC) testing (see <a class="reference external" href="https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists">CEC Solar Equipment List</a>). Use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/generated/pvlib.inverter.sandia.html"><code class="docutils literal notranslate"><span class="pre">pvlib.inverter.sandia</span></code></a> to calculate AC output given DC voltage and power and the inverter parameters from the NREL SAM library which we downloaded earlier into <code class="docutils literal notranslate"><span class="pre">INVERTER_60K</span></code> for the SMA STP 60kW inverter.</p>
+<p>The <a class="reference external" href="https://energy.sandia.gov/wp-content/gallery/uploads/Performance-Model-for-Grid-Connected-Photovoltaic-Inverters.pdf">Sandia grid inverter</a> is a convenient model. The coefficients in the NREL SAM library are derived from California Energy Commision (CEC) testing (see <a class="reference external" href="https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists">CEC Solar Equipment List</a>). Use <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/generated/pvlib.inverter.sandia.html"><code class="docutils literal notranslate"><span class="pre">pvlib.inverter.sandia</span></code></a> to calculate AC output given DC voltage and power and the inverter parameters from the NREL SAM library which we downloaded earlier into <code class="docutils literal notranslate"><span class="pre">INVERTER_60K</span></code> for the SMA STP 60kW inverter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">EDAILY</span> <span class="o">=</span> <span class="n">mpp</span><span class="o">.</span><span class="n">p_mp</span> <span class="o">*</span> <span class="n">STRING_LENGTH</span> <span class="o">*</span> <span class="n">STRING_COUNT</span>
@@ -692,7 +680,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b07f2f1c93905384874633a975eade86a80440379df63356eddd0ef8e71b61ea.png" src="_images/b07f2f1c93905384874633a975eade86a80440379df63356eddd0ef8e71b61ea.png" />
+<img alt="_images/1b7ee536fce9ad989eab2174c18842b8536a6622fe6dc3d31d13a3462eee6830.png" src="_images/1b7ee536fce9ad989eab2174c18842b8536a6622fe6dc3d31d13a3462eee6830.png" />
 </div>
 </div>
 <p><a class="reference external" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></p>
